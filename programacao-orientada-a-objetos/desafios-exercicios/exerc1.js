@@ -13,8 +13,14 @@ class Task  {
         this.priority = priority;
         this.status = status;
     }
+    formatDate() {
+        let day = this.creationDate.getDate().toString().padStart(2, '0');
+        let month = (this.creationDate.getMonth() + 1).toString().padStart(2, '0');
+        let year  =this.creationDate.getFullYear();
+        let date = `${day}/${month}/${year}`
 
-    
+        return date
+    }
 
     changeStatus() {
         let confirmChangeStatus = confirm(`O status dessa tarefa é ${this.status.toLocaleUpperCase()}, deseja alterar?`);
@@ -69,6 +75,4 @@ class Task  {
 }
 
 const task = new Task('criar uma class tema livre', 'criar uma class de tema livre para segunda feira')
-//console.log(task.showDetails())
-
-//task.editDescription()
+console.log(task.formatDate())

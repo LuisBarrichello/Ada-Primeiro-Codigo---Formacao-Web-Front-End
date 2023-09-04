@@ -41,7 +41,6 @@ class Conta {
         senha, 
         agencia
     ) {
-
         const saldoNumber = Number(saldo);
         if(isNaN(saldoNumber)) {
             throw new Error('saldo precisa ser um number');
@@ -68,7 +67,7 @@ class Conta {
     //set– uma função com um argumento, que é chamada quando a propriedade é definida,
     //nao pode mudar propriedade caso nao exista um setter, somente ler, e nao é possivel ler se existir setter e nao um getter
     get cpf() {
-        return this.#nome
+        return this.#cpf
     }
 
     validaSenha(senha) {
