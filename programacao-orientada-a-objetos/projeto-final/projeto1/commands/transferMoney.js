@@ -1,4 +1,4 @@
-const {User, users } =  require('../EconoBot.js')
+/* const {User, users } =  require('../EconoBot.js')
 
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
@@ -14,9 +14,9 @@ module.exports = {
             const autor = message.author;
         
             if (conteudo.startsWith('!transferir')) {
-                message.channel.send('Em desenvolvimento')
+                
 
-                /* const args = conteudo.split(' ');
+                const args = conteudo.split(' ');
                 if (args.length === 3) {
                     const valor = parseFloat(args[1]);
                     const destinatario = args[2];
@@ -42,9 +42,10 @@ module.exports = {
                     }
                 } else {
                     message.channel.send('Formato inválido. Use: !transferir [valor] [usuário]');
-                } */
+                } 
             }
         });
     },
 };
 
+*/
