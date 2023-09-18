@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <!-- Tipos de input -->
+        <h2>Input de Texto:</h2>
+        <input type="text" maxlength="" name="nome" placeholder="Digite..."/><!-- iput por padrao é text, 
+            display block, mas é escrito inline, 
+            maxLength e minLength para digitar
+            placeholder -> 
+        -->
+
+        <h2>Input de Senha:</h2>
+        <input type="password" name="senha" required/><!-- required -> define que input precisa estar preenchido  -->
+
+        <h2>Input de Número:</h2>
+        <input type="number" min="" max="" name="quantidade" /> <!-- min e max define numero min e max, com a setinha, da pra escrever-->
+
+        <h2>Input de E-mail:</h2>
+        <input type="email" name="email" />
+
+        <h2>Input de URL:</h2>
+        <input type="url" name="website" />
+
+        <h2>Input de Data:</h2>
+        <input type="date" name="data" />
+
+        <h2>Input de Hora:</h2>
+        <input type="time" name="hora" />
+
+        <h2>Input de Data e Hora Local:</h2>
+        <input type="datetime-local" name="data_hora_local" />
+
+        <h2>Input de Caixa de Seleção:</h2>
+        <input type="checkbox" name="aceito_termos" />
+
+        <h2>Input de Botão de Opção:</h2>
+        <input type="radio" name="sexo" value="masculino" />
+        <input type="radio" name="sexo" value="feminino" />
+
+        <h2>Input de Arquivo:</h2>
+        <input type="file" accept="image/png" name="arquivo" /> <!-- accept define que tipo de arquivo posso subir;  e colocoar * permite qualquer tipo de image-->
+
+        <h2>Input de Envio:</h2>
+        <input type="submit" value="Enviar" />
+
+        <h2>Input de Redefinição:</h2>
+        <input type="reset" value="Redefinir" /> <!-- só funciona dentro do fomrulario (<form action=""></form>)-->
+
+        <h2>Input de Botão:</h2>
+        <input type="button" value="Clique-me" />
+        <!-- Recomendado usar a tag button, dentro do formulario é submit por padrao, fora é type butto(<button type=""></button>)-->
+
+        <h2>Input de Campo Oculto:</h2>
+        <input type="hidden" name="campo_oculto" value="valor_oculto" />
+
+        <h2>Input de Cor:</h2>
+        <input type="color" name="cor" />
+
+        <h2>Input de Intervalo (Range):</h2>
+        <input type="range" name="intervalo" />
+
+        <h2>Input de Pesquisa:</h2>
+        <input type="search" name="pesquisa" />
+
+        <h2>Input de Telefone:</h2>
+        <input type="tel" name="telefone" />
+
+        <h2>Input de Mês:</h2>
+        <input type="month" name="mes" />
+
+        <h2>Input de Semana:</h2>
+        <input type="week" name="semana" />
+    </form>
+
+    <hr>
+
+    <form action="" ><!-- placeholder, label, tem haver com acessibilidade -->
+        <label for="nome-completo">Nome Completo</label><!-- for é o id do input que voce quer etiquetar -->
+        <input type="text" id="nome-completo" placeholder="Nome Completo">
+
+        <label><!-- input dentro do label tbm é uma forma correta  -->
+            <input type="email" name="email" id="email">
+        </label>
+        <input type="password" name="senha" id="senha">
+    </form>
+</body>
+</html>

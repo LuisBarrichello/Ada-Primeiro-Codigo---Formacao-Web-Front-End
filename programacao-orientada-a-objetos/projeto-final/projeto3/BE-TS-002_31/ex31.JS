@@ -1,3 +1,8 @@
+// a resposta está correta porém tem um pequeno erro de lógica
+// o if que verifica se o item tem quantidade suficiente em estoque está no final do método, ou seja, os itens em estoque são removidos antes de serem verificados
+// assim a quantidade de itens pode ficar negativa
+// colocando o if(quantidade > estoque) no lugar certo impede que isso aconteca:
+
 class Estoque { 
     constructor() {
         this.estoque = new Map()
@@ -14,15 +19,14 @@ class Estoque {
 
     remover(nome, quantidade) {
         if(this.estoque.has(nome)) {
+            if(quantidade > this.estoque.get(nome)) { // verificamos se temos quantidade suficiente antes da remoção
+                return "Não há quantidade suficiente para remoção";
+            }
             this.estoque.set(nome, this.estoque.get(nome) - quantidade)
             return `${quantidade} item(s) removido(s)`
         }
         if(!this.estoque.has(nome) || this.estoque.get(nome) === 0) {
             return `Produto não encontrado.` 
-        }
-
-        if(quantidade > this.estoque.get(nome)) {
-            return "Não há quantidade suficiente para remoção";
         }
     }
 

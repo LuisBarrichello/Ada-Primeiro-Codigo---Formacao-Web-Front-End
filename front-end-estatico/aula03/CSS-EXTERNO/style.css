@@ -1,0 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    color: blue !important; /* important -> define que ele é importante e sobre sai, mas se colocar 2 no mesmo elemento, ele usa o ultimo, sobreescreve */
+}

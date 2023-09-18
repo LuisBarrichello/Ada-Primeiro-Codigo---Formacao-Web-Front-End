@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--metodos:
+    get -> trafega url
+    post -> trfega pela rede, pode ou nao ser criptografado
+    -->
+    <form action="https://www.w3schools.com/action_page.php" method="post"><!-- action, pra quem nos vamos passar os dados do formulario -->
+
+        <fieldset><!-- Separaçao -->
+            <legend>Dados Pessoais</legend>
+
+            <label for="nome">Nome</label>
+            <input type="text" id="nome">
+
+            <label for="data-nsc">Data de Nascimento</label>
+            <input type="date" name="data-nsc" id="data-nsc">
+
+            <select name="nacionalidade" multiple><!-- multiple permite multipla selecao -->
+                <option value="">Brasileiro</option>
+                <option value="">Argentino</option>
+                <optgroup label="Europeu">
+                    <option value="">Frances</option>
+                    <option value="">Espanhol</option>
+                    <option value="">Italiano</option>
+                </optgroup>
+            </select>
+            
+            <label for="pix">Fazer pix</label>
+            <input type="checkbox" name="" id="pix" checked>
+            <label for="sonegar">Fazer sonegar</label>
+            <input type="checkbox" name="" id="sonegar">
+            <label for="pagar-boleto">Fazer pagar-boleto</label>
+            <input type="checkbox" name="" id="pagar-boleto">
+
+        </fieldset>
+        <fieldset>
+            <legend>Dados da Conta</legend>
+    
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+    
+            <label for="senha">Senha</label>
+            <input type="password" id="senha">
+
+            <label for="pj">PJ</label>
+            <input type="radio" name="tp_conta" id="">
+            
+            <label for="pj">PF</label>
+            <input type="radio" name="tp_conta" id="">
+            <!-- relacao pelo nome, se nao, usuaria seleciona os dois -->
+
+        </fieldset>
+
+        
+
+
+        <button type="submit">Enciar</button>
+    </form>
+</body>
+</html>

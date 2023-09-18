@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Registro de usuário</title>
+</head>
+<body>
+    <main>
+        <h2 class="title">Registro de Usuário</h2>
+        <form action="https://www.w3schools.com/action_page.php" method="post">
+            <fieldset>
+                <legend>Dados Pessoais:</legend>
+                <div class="container-input">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Nome Completo" class="text">
+                </div>
+                
+                <div class="container-input">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required class="text" placeholder="E-mail">
+                </div>
+                
+                <div class="container-input">
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco" placeholder="Endereço" class="text">
+                </div>
+                
+                <div class="container-input">
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" class="text" placeholder="Cidade">
+                </div>
+
+                <div class="container-input">
+                    <label for="estado">Estado:</label>
+                    <select id="estado" name="estado" class="select">
+                        <option value="selecione" selected disabled>Selecione um Estado</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="outros">Outro Estado</option>
+                    </select>
+                </div>
+                
+                <div class="container-input">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone"  maxlength="11" placeholder="(XX) XXXX-XXXXX" pattern="[0-9]{2}[0-9]{4}[0-9]{5}" required class="text">
+                </div>
+
+                <div class="container-input">
+                    <label for="data_nascimento">Data de Nascimento:</label>
+                    <input type="date" id="data_nascimento" name="data_nascimento" required>
+                </div>
+                
+                <div class="container-input">
+                    <label for="interesses">Interesses:</label>
+                    <div class="interesses text">
+                        <div>
+                            <input type="checkbox" name="interesses" id="esportes" value="Esportes">
+                            <label for="esportes">Esportes</label>
+                        </div>
+                        
+                        <div>
+                            <input type="checkbox" name="interesses" id="tecnologia" value="Tecnologia">
+                            <label for="tecnologia">Tecnologia</label>
+                        </div>
+                        
+                        <div>
+                            <input type="checkbox" name="interesses" id="interesses" value="Viagens">
+                            <label for="viagens">Viagens</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-input">
+                    <label for="foto_perfil">Foto de Perfil:</label>
+                    <input type="file" id="foto_perfil" name="foto_perfil" accept="image/png" class="text">
+                </div>
+
+                <div class="container-input">
+                    <label for="bio">Biografia:</label>
+                    <textarea id="bio" name="bio" rows="4" cols="50" class="text"></textarea>
+                </div>
+            </fieldset>
+
+            <div class="container-input">
+                <label>Preferência de Notificação:</label>
+                <div class="notificacao text">
+                    <div>
+                        <input type="radio" id="email_pref" name="preferencia" value="email">
+                        <label for="email_pref">E-mail</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="sms_pref" name="preferencia" value="sms">
+                        <label for="sms_pref">SMS</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="telefone_pref" name="preferencia" value="telefone">
+                        <label for="telefone_pref">Telefone</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-input">
+                <label for="senha">Senha:</label>
+                <div class="text">
+                    <input type="password" id="senha" name="senha" required>
+                    <button><img src="./Vector.svg" alt="icone com um olho, indicação par vizualizar sua senha" class="icon-password"></button>
+                </div>
+            </div>
+            
+            <div class="container-input">
+                <label for="confirma_senha">Confirmar Senha:</label>
+                <div class="text">
+                    <input type="password" id="confirma_senha" name="confirma_senha" required>
+                    <button><img src="./Vector.svg" alt="icone com um olho, indicação par vizualizar sua senha" class="icon-password"></button>
+                </div>
+            </div>
+            
+            <div class="container-btn">
+                <button type="submit" class="btn-submit">Enviar</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
