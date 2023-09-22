@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    height: 200vh;/* vh -> view height altura da viewport */
+}
+/* POSITION: https://www.w3schools.com/css/css_positioning.asp
+    
+    - STATIC -> não está posicionado de nenhuma maneira especial; está sempre posicionado de acordo com o fluxo normal da página:
+    
+    - FIXED -> é posicionado em relação à janela de visualização, o que significa que ele permanece sempre no mesmo lugar mesmo se a página for rolada. As propriedade top, right, bottom, and left são usadas para posicionar o elemento. Um elemento fixo não deixa espaço na página onde normalmente estaria localizado.
+    
+    - ABSOLUTE -> é posicionado em relação ao ancestral posicionado mais próximo (em vez de posicionado em relação à janela de visualização, como fixo).No entanto; se um elemento posicionado de forma absoluta não tiver ancestrais posicionados, ele usará o corpo do documento e se moverá junto com a rolagem da página. Nota: Elementos posicionados de forma absoluta são removidos do fluxo normal e podem se sobrepor a elementos.
+    
+    - RELATIVE -> é posicionado em relação à sua posição normal. As propriedade top, right, bottom, and left de um elemento relativamente posicionado fará com que ele seja ajustado fora de sua posição normal. Outros conteúdos não serão ajustados para caber em qualquer lacuna deixada pelo elemento.
+    
+    - STYCK -> é posicionado com base na posição de rolagem do usuário.
+    Um elemento fixo alterna entre relativee fixed, dependendo da posição de rolagem. Ele é posicionado em relação até que uma determinada posição de deslocamento seja atingida na janela de visualização - então ele "gruda" no lugar (como position:fixed).
+ */
+.box-1 {
+    /* position: relative; */
+    top: 20px;
+    left: 20px;
+    margin-top: 300px;
+
+    width: 500px;
+    height: 500px;
+    background: blueviolet;
+}
+
+.box-2 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    width: 250px;
+    height: 250px;
+    background: green;
+    /* z-index: 1; Propriedade especifica a ordem de pilha de um elemento. só funciona com position diferente de static*/
+}

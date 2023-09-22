@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    font-size: 62.5%;
+    --main-green: rgb(166, 247, 80);
+    --blue: rgb(35, 113, 255);
+    --main-bg: rgb(24, 28, 35);
+}
+
+body {
+    max-width: 100VW;
+    font-size: 1.6rem;
+    color: white;
+    background: var(--main-bg);
+    text-align: center;
+}
+
+table {
+    margin: 1rem 2rem;
+}
+
+td {
+    width: 100vw;
+}
+
+input, a {
+    all: unset;
+}
+
+a:hover {
+    color: var(--blue);
+    cursor: pointer;
+}
+
+img:not(.logo) {
+    width: 50vw;
+    height: 100vh;
+}
+
+.title {
+    font-size: 1.7rem;
+}
+
+.green {
+    color: var(--main-green);
+}
+
+.filled {
+    cursor: pointer;
+    background: var(--main-green);
+    color: black;
+}
+
+.link {
+    cursor: pointer;
+}

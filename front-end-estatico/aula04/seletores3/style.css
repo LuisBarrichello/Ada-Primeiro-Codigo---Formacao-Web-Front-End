@@ -1,0 +1,8 @@
+div + p { /* todo paragrafo imediatamente apos a div */
+    color: rgb(91, 254, 26);
+}
+
+
+div ~ p { /* todo paragrafo apos a div, nao necessariamente imadiatamente apos, entao todo e qualquer paragrafo apos a div sera alterado */
+    color: rgb(221, 131, 131);
+}

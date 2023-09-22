@@ -1,0 +1,12 @@
+* {
+    background-color: rgb(28, 27, 27);
+    color: white;
+}
+
+div p { /* qualquer paragrafo dentro da div mesmo aquele netos, recebem a herença */
+    color: coral;
+}
+
+div > p { /* obrigatoriamente interno, todo paragro dentro de uma div */
+    color: coral;
+}

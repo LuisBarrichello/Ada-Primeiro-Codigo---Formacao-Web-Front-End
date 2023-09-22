@@ -1,0 +1,14 @@
+div {
+    background-color: blueviolet;
+}
+
+span {
+    background: pink;
+}
+
+div, span {
+    display: inline-block; /* melhor dos 2 mundos, do inline e block */
+    margin: 3px;
+    height: 100px;
+    width: 86px;
+}

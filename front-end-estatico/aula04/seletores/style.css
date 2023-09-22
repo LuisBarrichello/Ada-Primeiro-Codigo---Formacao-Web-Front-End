@@ -1,0 +1,51 @@
+p {
+    color:darkblue;
+}
+
+#p-2 {
+    color: red;
+}
+
+.pares {
+    color: seagreen;
+}
+
+.btn {
+    border: none;
+}
+
+.bg-red{
+    background: rgb(182, 105, 105);
+}
+
+.btn.bg-red {
+    border: 1px solid blue;
+    background: rgb(245, 134, 134);
+    color: white;
+}
+
+.selected {
+    background-color: lightgreen;
+}
+.selected:hover {
+    background-color: darkgreen;
+    cursor: pointer;
+}
+
+.disable {
+    background-color: silver;
+}
+
+.habilitado {
+    background-color: lightskyblue;
+}
+.habilitado:hover {
+    transition: .5s;
+    background-color: darkblue;
+    color: white;
+    cursor: pointer;
+}
+
+#especial.selected { /* id sobre poe class, por isso  perdeu :hover */
+    background-color: peru;
+}
