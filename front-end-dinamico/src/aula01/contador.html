@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO -->
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #333;
+            font-size: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            gap: 2rem;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button id="mais" onclick="incrementar()">+</button>
+    <span id="status">0</span>
+    <button id="menos" onclick="decrementar()">-</button>
+
+    <script>
+        let contador = 0;
+
+        function atualizar() {
+            const span = document.getElementById('status');
+            span.textContent = contador
+        }
+
+        function incrementar() {
+            contador++;
+            atualizar()
+        }
+
+        function decrementar() {
+            if(contador > 0) {
+                contador--;
+                atualizar()
+            }
+        }
+    </script>
+</body>
+</html>

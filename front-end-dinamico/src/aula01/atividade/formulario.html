@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Formulario de cadastro</h2>
+    <form action="" onsubmit="enviar(event, this)">
+        <div>
+            <label for="cpf">CPF (Cadastro de Pessoa Física): </label>
+            <input type="text" id="cpf" placeholder="CPF">
+        </div>
+
+        <div>
+            <label for="rg">RG (Registro Geral):</label>
+            <input type="text" id="rg" placeholder="RG">
+        </div>
+        <div>
+            <label for="cep">Código Postal:</label>
+            <input type="text" id="cep" placeholder="CEP">
+        </div>
+        <div>
+            <label for="tel">Número de Telefone:</label>
+            <input type="text" id="tel" placeholder="Número de Telefone">
+        </div>
+        <div>
+            <label for="email">E-mail:</label>
+            <input type="text" id="email" placeholder="E-mail">
+        </div>
+        
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script src="./script.js"></script>
+</body>
+</html>

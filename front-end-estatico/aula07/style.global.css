@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+    font-weight: 400;
+}
+
+:root {
+    --font-montserrat: Montserrat;
+    --cor-primaria: blue;
+    --cor-secundaria: rgb(167, 71, 167);
+}
