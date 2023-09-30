@@ -7,20 +7,20 @@ Este repositório contém os módulos do curso <Primeiro Código>. Cada módulo 
 #### Módulo 1: Redes
 
 #### Módulo 2: Lógica de programação - Js
-- **Pasta**: [Módulo2](./logica-de-programacao/)
+- **Pasta**: [Módulo2](https://github.com/LuisBarrichello/logica-primeiro-codigo/tree/6ab38afaa6016c4594c6bb2a933a960981682c65)
 
 #### Módulo 3: Programação Orientada a Objetos I - Js
-- **Pasta**: [Módulo3](./programacao-orientada-a-objetos/)
+- **Pasta**: [Módulo3](https://github.com/LuisBarrichello/Ada-Primeiro-Codigo---Formacao-Web-Front-End/tree/master/programacao-orientada-a-objetos)
 
 #### Módulo 4: Front End Estático - HTML & CSS
-- **Pasta**: [Módulo4](./front-end-estatico/)
+- **Pasta**: [Módulo4](https://github.com/LuisBarrichello/Ada-Primeiro-Codigo---Formacao-Web-Front-End/tree/master/front-end-estatico)
 
 ## Projetos Finais de cada Modulo
 #### Módulo 2: Lógica de programação - Js
-- **Pasta**: [Módulo2](./logica-de-programacao/projeto-final/)
+- **Pasta**: [Módulo2](https://github.com/LuisBarrichello/logica-primeiro-codigo/tree/6ab38afaa6016c4594c6bb2a933a960981682c65/projeto-final)
 
 #### Módulo 3: Programação Orientada a Objetos I - Js
-- **Pasta**: [Módulo3](./programacao-orientada-a-objetos/projeto-final/)
+- **Pasta**: [Módulo3](https://github.com/LuisBarrichello/Ada-Primeiro-Codigo---Formacao-Web-Front-End/tree/master/programacao-orientada-a-objetos/projeto-final)
 
 #### Módulo 4: Front End Estático - HTML & CSS
-- **Pasta**: [Módulo4](./front-end-estatico/projeto-final/)
+- **Pasta**: [Módulo4](https://github.com/onerbreno/orbit-trips)
