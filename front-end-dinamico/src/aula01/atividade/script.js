@@ -1,11 +1,18 @@
-/* CPF */
 function enviar(event, elemento) {
     event.preventDefault();
-    validar(elemento)
+    validaCPF(elemento)
+    validaRG(elemento)
+    validaCEP(elemento)
+    validaTelefone(elemento)
+    validaEmail(elemento)
 }
 
-function validar(elemento) {
+/* CPF */
+function validaCPF(elemento) {
     let cpf = elemento.querySelector('#cpf')?.value;
+
+    cpf = cpf.replace(/\D/g, '');
+
     if(cpf.length != 11 || cpf === '' || 
         cpf == "00000000000" || 
         cpf == "11111111111" || 
@@ -25,18 +32,53 @@ function validar(elemento) {
 
     if((resto === 10) || (resto == 11)) resto = 0;
 
-    if(resto != parseInt(cpf.substring(10,11))) throw Error('CPF inválido')
-
-    console.log('CPF VALIDO')
-    return true
+    if(resto != parseInt(cpf.substring(10,11))) throw new Error('CPF inválido')
 }
 
 /* rg */
+function validaRG(elemento) {
+    let rg = elemento.querySelector('#rg')?.value;
+
+    // Remova quaisquer pontos e traços do RG
+    rg = rg.replace(/\D/g, '');
+
+    // Verifique se o RG tem 9 dígitos
+    if (rg.length !== 9) {
+        throw new Error('Digite um Rg válido');
+    }
+}
+
+/* CEP */
+function validaCEP(elemento) {
+    let cep = elemento.querySelector('#cep')?.value;
+    
+    cep = cep.replace(/\D/g, '');
+
+    const validacep = /^[0-9]{8}$/;
+
+    if(!validacep.test(cep)) throw new Error('CP inválido')
+}
 
 /* telefone */
-function ValidaTelefone(telefone){
-    const tel = document.getElementById('tel')
-    exp = /\(\d{2}\)\ \d{4}\-\d{4}/
-    if(!exp.test(tel.value))
-            alert('Numero de Telefone Invalido!');
+function validaTelefone(elemento){
+    const tel = elemento.querySelector('#tel')?.value;
+    exp = /\(\d{2}\)\ \d{5}\-\d{4}/
+    if(!exp.test(tel)) throw new Error('Numero de Telefone Invalido!');
 }
+
+/* E-mail */
+function validaEmail(elemento) {
+    const email = elemento.querySelector('#email')?.value;
+
+    const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+    if(!regexEmail.test(email)) throw new Error('Email inválido')
+}
+
+/* Exemplo de teste
+cpf - 12345678909
+rg 12345678-9
+cep 12345-678
+tel (99) 12345-6788
+email emailaleatorio123@example.com
+*/
