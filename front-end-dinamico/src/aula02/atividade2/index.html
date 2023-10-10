@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+    <style>
+        #task-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .task-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todo List</h1>
+
+    <form id="task-form">
+        <input type="text" id="task-name" placeholder="Digite uma tarefa..." required>
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <ul id="task-list"></ul>
+
+    <script>
+        class Task {
+            constructor(name) {
+                this.name = name;
+                this.completed = false;
+            }
+
+            toggleCompleted() {
+                this.completed = !this.completed;
+            }
+        }
+
+        const taskForm = document.getElementById('task-form');
+        const taskNameInput = document.getElementById('task-name');
+        const taskList = document.getElementById('task-list');
+
+        taskForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const taskName = taskNameInput.value.trim();
+
+            if (taskName !== '') {
+                const task = new Task(taskName);
+                addTaskToList(task);
+                taskNameInput.value = '';
+            }
+        });
+
+        function addTaskToList(task) {
+            const taskItem = document.createElement('li');
+            taskItem.className = 'task-item';
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.addEventListener('change', function() {
+                task.toggleCompleted();
+                updateTaskList();
+            });
+
+            const taskLabel = document.createElement('label');
+            taskLabel.textContent = task.name;
+
+            taskItem.appendChild(checkbox);
+            taskItem.appendChild(taskLabel);
+            taskList.appendChild(taskItem);
+
+            updateTaskList();
+        }
+
+        function updateTaskList() {
+            const tasks = Array.from(document.querySelectorAll('.task-item'));
+
+            tasks.forEach((taskItem, index) => {
+                const task = new Task(taskItem.querySelector('label').textContent);
+                task.completed = taskItem.querySelector('input[type="checkbox"]').checked;
+
+                if (task.completed) {
+                    taskItem.style.textDecoration = 'line-through';
+                } else {
+                    taskItem.style.textDecoration = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
