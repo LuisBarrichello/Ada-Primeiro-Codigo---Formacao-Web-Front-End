@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./loader.css">
     <title>Document</title>
 </head>
 <body>
-    
+    <header>
+        <h1 class="title">Programming Jokes</h1>
+    </header>
+    <div class="buttons">
+        <button id="getJokeButton">Get Joke</button>
+        <button id="likeJokeButton" style="display: none">Like joke</button>
+        <button id="nextJokeButton" style="display: none">Next joke</button>
+    </div>
+    <div id="loader"></div>
+    <div id="jokeDisplay">
+        
+    </div>
+    <section>
+        <div id="favoriteJokes">
+            <h1 class="title-favoriteJokes">Favorite Jokes</h1>
+            <div>
+
+            </div>
+        </div>
+    </section>
+    <script src="./script.js"></script>
 </body>
 </html>

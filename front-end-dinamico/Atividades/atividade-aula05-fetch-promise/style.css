@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+
+    height: 100vh;
+    background-color: #F5F5F5 ;
+    font-size: 1.6rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+
+button {
+    max-width: 10rem;
+    all: unset;
+    cursor: pointer;
+}
+
+header {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 6rem;
+}
+
+.buttons {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+
+#getJokeButton, #likeJokeButton {
+    background: #3498db;
+    color: #fff;
+    padding: .7rem 1rem;
+    border-radius: .5rem;
+}
+
+#nextJokeButton {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: .7rem 1rem;
+    border-radius: .5rem;
+}
+
+#jokeDisplay, #favoriteJokes {
+    max-width: 80%;
+    padding: 2rem;
+    background-color: #FFFFFF;
+
+    border-radius: 1rem;
+    display: none;
+}
+
+#jokeDisplay p {
+    font-size: 1.6rem;
+}
+
+#favoriteJokes {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2rem;
+}
