@@ -1,8 +1,52 @@
-# Atividade: Aplicativo de Piadas
+# Aplicativo de Piadas
 
-https://v2.jokeapi.dev/joke/Any?lang=pt
+Este é um aplicativo simples que permite aos usuários obter e curtir piadas de programação. Ele utiliza uma API pública de piadas e permite que os usuários vejam as piadas obtidas, as curtam e as salvem como favoritas. Além disso, as piadas curtidas são armazenadas localmente para que os usuários possam acessá-las mesmo após atualizarem a página.
 
-Requisitos:
+## Overview
+
+Este aplicativo tem as seguintes funcionalidades:
+
+- Um botão "Obter Piada" que, ao ser clicado, busca uma piada de programação na API pública de piadas.
+- Um espaço para exibir a piada obtida da API.
+- Um botão "Próxima Piada" que permite aos usuários buscar outra piada.
+- Um botão "Curtir" para marcar as piadas que os usuários gostaram.
+- Uma seção que exibe as piadas curtidas pelos usuários.
+- Estilização com Bootstrap para tornar a interface mais atraente.
+- Um ícone de carregamento ou uma mensagem de "Carregando..." enquanto a API está sendo consultada.
+
+## Funcionalidades
+
+### Botão "Obter Piada"
+
+Ao clicar no botão "Obter Piada", o aplicativo faz uma solicitação à API de piadas e exibe a piada na página. A piada pode ser de programação ou relacionada a esse tema.
+
+### Botão "Próxima Piada"
+
+O botão "Próxima Piada" permite aos usuários buscar uma nova piada, realizando outra solicitação à API para obter uma piada diferente.
+
+### Botão "Curtir"
+
+Com o botão "Curtir", os usuários podem marcar as piadas que gostaram. As piadas curtidas são armazenadas localmente.
+
+### Lista de Piadas Curtidas
+
+O aplicativo possui uma seção que exibe as piadas curtidas pelos usuários. As piadas curtidas são armazenadas localmente e podem ser removidas da lista.
+
+## Deploy
+
+* [Deploy - Aplicativo de Piadas]()
+
+## Tecnologias
+
+As principais tecnologias utilizadas neste aplicativo são:
+
+- HTML
+- JavaScript
+- CSS
+- JokeAPI (para obter piadas de programação, utilizando fetch)
+- localStorage (para armazenar piadas curtidas localmente)
+
+Requisitos para desenvolvimento:
 
 1. Crie uma interface de usuário em HTML com um botão "Obter Piada" e um espaço para exibir a piada.
 

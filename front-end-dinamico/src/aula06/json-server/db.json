@@ -1,0 +1,12 @@
+{
+    "pedidos": [
+        {
+            "id": 1123232323,
+            "pedido": "pedido titulo",
+            "data": "10/10/2024",
+            "valor": 15,
+            "email": "teste@gmail.com",
+            "previsao": "10: 15"
+        }
+    ]
+}

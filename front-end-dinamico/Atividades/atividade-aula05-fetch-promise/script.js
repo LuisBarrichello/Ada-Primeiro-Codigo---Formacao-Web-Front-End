@@ -65,9 +65,11 @@ function displayFavoriteJokes() {
     const favoriteJokesList = JSON.parse(localStorage.getItem('favoriteJokes')) || [];
 
     favoriteJokes.style.display = 'flex';
+    favoriteJokes.innerHTML = '';
     
     const titleFavoriteJokes = document.querySelector('.title-favoriteJokes');
     titleFavoriteJokes.style.display = 'inline-block';
+
 
     for (const joke of favoriteJokesList) {
         const jokeElement = document.createElement("p");
@@ -83,6 +85,7 @@ nextJokeButton.addEventListener("click", async () => {
 likeJokeButton.addEventListener('click', () => {
     const jokeText = document.querySelector('#jokeDisplay > p').textContent;
     saveFavoriteJokes(jokeText);
+    displayFavoriteJokes();
 })
-displayFavoriteJokes();
 
+displayFavoriteJokes();
