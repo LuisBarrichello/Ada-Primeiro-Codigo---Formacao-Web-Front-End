@@ -29,3 +29,51 @@ Você pode adicionar recursos adicionais, como categorização de tarefas, notif
 ## Requisitos Técnicos:
 
 A aplicação deve ser criada usando HTML, CSS e JavaScript puro, sem o uso de frameworks ou bibliotecas de terceiros. Você deve usar o localStorage ou outro método de armazenamento local para salvar os dados de usuário e tarefas. O design da aplicação deve ser responsivo e apresentar uma interface de usuário atraente e amigável. É importante que você siga as melhores práticas de desenvolvimento web, como separação de HTML, CSS e JavaScript, e código bem estruturado.
+
+
+
+- [x] **Planejamento do Projeto**
+  - [x] Definir os requisitos detalhados com base na descrição do projeto.
+  - [x] Esboçar o design da interface do usuário.
+  - [x] Criar um plano de desenvolvimento, dividindo as tarefas em etapas menores.
+
+- [x] **Configuração Inicial**
+  - [x] Configurar a estrutura básica de arquivos HTML, CSS e JavaScript.
+  - [x] Criar um arquivo HTML para a página principal.
+  - [x] Criar um arquivo CSS para estilizar a aplicação.
+
+- [x] **Cadastro de Usuário**
+  - [x] Implementar a página de cadastro de usuário.
+  - [x] Criar formulário para coletar nome de usuário e senha.
+  - [x] Adicionar lógica para armazenar os dados do usuário no localStorage.
+
+- [x] **Login de Usuário**
+  - [x] Implementar a página de login.
+  - [x] Criar um formulário para coletar credenciais do usuário.
+  - [x] Verificar as credenciais do usuário no localStorage e permitir o acesso aos recursos do usuário autenticado.
+
+- [ ] **Área do Usuário**
+  - [x] Desenvolver a página da área do usuário após o login.
+  - [x] Criar uma interface para criar, editar, excluir e visualizar tarefas.
+  - [ ] Implementar a funcionalidade de criação de tarefas, incluindo descrição e prazos.
+  - [ ] Implementar a funcionalidade de edição e exclusão de tarefas.
+  - [ ] Exibir as tarefas organizadas por prazos e prioridades.
+
+- [ ] **Estilização e Design Responsivo**
+  - [ ] Aprimorar o design da aplicação, tornando-o atraente e amigável.
+  - [ ] Garantir que a aplicação seja responsiva, funcionando bem em dispositivos móveis e desktop.
+
+- [ ] **Testes e Depuração**
+  - [ ] Testar a aplicação em vários navegadores e dispositivos para garantir a compatibilidade.
+  - [ ] Corrigir quaisquer bugs ou problemas encontrados durante os testes.
+
+- [ ] **Recursos Adicionais (Opcionais)**
+  - [ ] Se desejar, implementar recursos adicionais, como categorização de tarefas ou notificações em tempo real.
+
+- [ ] **Documentação**
+  - [ ] Criar documentação do projeto, incluindo instruções de uso e descrição das funcionalidades.
+
+- [ ] **Finalização e Entrega**
+  - [ ] Revisar todo o código para garantir que está bem estruturado e segue as melhores práticas.
+  - [ ] Preparar a aplicação para a entrega, incluindo a criação de um pacote ou arquivos finais.
+  - [ ] Submeter o projeto de acordo com as diretrizes do curso.
