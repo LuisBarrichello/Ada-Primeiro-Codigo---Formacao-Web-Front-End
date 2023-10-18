@@ -14,9 +14,11 @@ document.addEventListener('DOMContentLoaded',  () => {
 
         if (registeredUser) {
             localStorage.setItem('isLoggedIn', 'true');
-            window.location.href = "index.html"; 
+            localStorage.setItem('currentUserId', registeredUser.id);
+            window.location.href = "index.html";
         } else {
             if (users.every(user => user.email !== email)) {
+                alert('Não há esse cadastro, faça sua inscrição para nossa toDo List')
                 window.location.href = "register.html"; 
             } else {
                 alert("Login failed. Please check your email and password.");
@@ -24,10 +26,3 @@ document.addEventListener('DOMContentLoaded',  () => {
         }
     })
 })
-
-
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
-
-    if (isLoggedIn !== 'true') {
-        window.location.href = "login.html"; 
-    }

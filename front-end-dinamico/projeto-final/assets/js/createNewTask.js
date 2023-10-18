@@ -1,5 +1,5 @@
 import { Task } from "./classTask.js";
-import { saveLocalStorage, loadTasksFromLocalStorage } from "./localStorage.js";
+import { saveTaskLocalStorage, loadTasksFromLocalStorage } from "./localStorage.js";
 
 const CONTAINER_TASK = document.querySelector('.container-tasks')
 const BUTTON_NEW_TASK = document.querySelector('.button-new-task')
@@ -12,23 +12,20 @@ function createNewTask(event) {
     const contentSetDate = document.getElementById('set-date');
     const contentPriority = document.getElementById('priority')
 
-    // Verifique se o usuário está autenticado ou tenha um identificador de usuário.
-
-    if(contentDescriptionTask === '') {
-        const inputTask = document.getElementById('input-new-task')
-        inputTask.style.border = '.1rem solid red';
-        const erro = new Error('Campo não pode ser vazio')
-        return alert(erro)
-    }
-
+    checkInputfilled(contentDescriptionTask)
 
     // Crie uma tarefa associada ao usuário.
-    const user = getCurrentUser(); // Implemente essa função para obter o usuário atual.
-    const task = new Task(contentDescriptionTask, )
+    const user = getCurrentUser(); 
+
+
+    ///****PAREI AQUI*****
+    const listTaskCurrentUser = JSON.paser(localStorage.getItem(`taskUser: "${user.id}"`) || []);
+
+    const task = new Task(contentDescriptionTask, contentSetDate, priority)
 
     const taskElement = createBodyTask(task.descriptionTask);
 
-    saveLocalStorage(task)
+    saveTaskLocalStorage(task)
 
     CONTAINER_TASK.appendChild(taskElement)
 }
@@ -96,6 +93,19 @@ function loadTaskSaved(contentTask) {
     const taskElement = createBodyTask(task.descriptionTask);
     CONTAINER_TASK.appendChild(taskElement)
 
+}
+
+function getCurrentUser() {
+    return localStorage.getItem('currentUserId');
+}
+
+function checkInputfilled(contentDescriptionTask) {
+    if(contentDescriptionTask === '') {
+        const inputTask = document.getElementById('input-new-task')
+        inputTask.style.border = '.1rem solid red';
+        const erro = new Error('Campo não pode ser vazio')
+        return alert(erro)
+    }
 }
 
 export { createBodyTask, createNewTask, loadTaskSaved }

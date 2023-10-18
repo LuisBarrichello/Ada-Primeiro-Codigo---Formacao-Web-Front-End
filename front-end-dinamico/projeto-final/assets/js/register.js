@@ -12,7 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
 
+        console.log(userName, email, password)
+
         const users = JSON.parse(localStorage.getItem('users')) || [];
+        console.log(users)
 
         // Verificar se o usuário já está cadastrado por email ou nome de usuário.
         const registeredUser = users.find(user => user.email === email || user.userName === userName);
@@ -22,17 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
             userAlreadyRegistered = true;
         } else {
             // Se o usuário não existe, crie um novo usuário.
-            users.push(new User(userName, email, password));
+            const newUser = new User(userName, email, password);
+            users.push(newUser);
             localStorage.setItem('isLoggedIn', 'true');
 
             const usersJSON = JSON.stringify(users);
 
             localStorage.setItem('users', usersJSON);
-        }
-    });
 
-    BUTTON_SUBMIT.addEventListener('click', () => {
-        if (!userAlreadyRegistered) {
+            localStorage.setItem('currentUserId', newUser.id);
             window.location.href = 'index.html';
         }
     });

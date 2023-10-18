@@ -2,7 +2,7 @@ import { Task } from "./classTask.js";
 import { loadTaskSaved } from "./createNewTask.js";
 import { completeTask } from "./completeTask.js";
 
-function saveLocalStorage(task) {
+function saveTaskLocalStorage(task) {
     return localStorage.setItem(`id ${Task.id}`, task.descriptionTask);
 }
 
@@ -16,5 +16,5 @@ function loadTasksFromLocalStorage() {
     }
 }
 
-export { saveLocalStorage, loadTasksFromLocalStorage }
+export { saveTaskLocalStorage, loadTasksFromLocalStorage }
 
