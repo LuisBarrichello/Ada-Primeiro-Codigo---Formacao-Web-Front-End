@@ -1,19 +1,27 @@
 import { Task } from "./classTask.js";
-import { loadTaskSaved } from "./createNewTask.js";
+import { createBodyTask, getCurrentUser, loadTaskSaved } from "./createNewTask.js";
 import { completeTask } from "./completeTask.js";
+import { deleteTask } from "./deleteTask.js";
 
-function saveTaskLocalStorage(task) {
-    return localStorage.setItem(`id ${Task.id}`, task.descriptionTask);
+function saveTaskLocalStorage(listTaskCurrentUser, user) {
+    return localStorage.setItem(`taskUser: ${user}`, listTaskCurrentUser);
 }
 
 function loadTasksFromLocalStorage() {
-    for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        const value = localStorage.getItem(key);
+    const user = getCurrentUser(); // Obtém o ID do usuário atual
+    const taskList = JSON.parse(localStorage.getItem(`taskUser: ${user}`)) || [];
 
-        loadTaskSaved(value)
-        completeTask()
+    const CONTAINER_TASK = document.querySelector('.container-tasks');
+
+    CONTAINER_TASK.innerHTML = '';
+
+    for (const taskData of taskList) {
+        const task = new Task(taskData.descriptionTask, taskData.dueDate, taskData.priority);
+        const taskElement = createBodyTask(task.descriptionTask, task.dueDate, task.priority);
+        CONTAINER_TASK.appendChild(taskElement);
     }
+    completeTask()
+    deleteTask()
 }
 
 export { saveTaskLocalStorage, loadTasksFromLocalStorage }

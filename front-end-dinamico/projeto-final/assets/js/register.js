@@ -26,14 +26,16 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             // Se o usuário não existe, crie um novo usuário.
             const newUser = new User(userName, email, password);
+            localStorage.setItem('currentUserId', `${newUser.id}`);
+
             users.push(newUser);
+
             localStorage.setItem('isLoggedIn', 'true');
 
             const usersJSON = JSON.stringify(users);
 
             localStorage.setItem('users', usersJSON);
 
-            localStorage.setItem('currentUserId', newUser.id);
             window.location.href = 'index.html';
         }
     });

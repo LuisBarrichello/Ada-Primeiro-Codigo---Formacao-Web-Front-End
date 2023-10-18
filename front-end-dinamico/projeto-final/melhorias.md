@@ -1,0 +1,5 @@
+- [ ] Pegar input de data e torna-lo um objeto para trabalhar com prazos
+- [ ] validaçoes de input
+- [ ] infos de quantidade de tarefas feita ataulizar dinamicamente
+- [ ] aplicar css para cada tipo de prioridade
+- [ ] 

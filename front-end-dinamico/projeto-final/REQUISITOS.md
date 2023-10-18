@@ -55,8 +55,10 @@ A aplicação deve ser criada usando HTML, CSS e JavaScript puro, sem o uso de f
 - [ ] **Área do Usuário**
   - [x] Desenvolver a página da área do usuário após o login.
   - [x] Criar uma interface para criar, editar, excluir e visualizar tarefas.
-  - [ ] Implementar a funcionalidade de criação de tarefas, incluindo descrição e prazos.
-  - [ ] Implementar a funcionalidade de edição e exclusão de tarefas.
+  - [x] Implementar a funcionalidade de criação de tarefas, incluindo descrição e prazos.
+  - [x] Implementar a funcionalidade de completar tarefa.
+  - [ ] Implementar a funcionalidade de exclusão de tarefas.
+  - [ ] Implementar a funcionalidade de edição.
   - [ ] Exibir as tarefas organizadas por prazos e prioridades.
 
 - [ ] **Estilização e Design Responsivo**

@@ -9,25 +9,29 @@ BUTTON_NEW_TASK.addEventListener('click', createNewTask)
 function createNewTask(event) {
     event.preventDefault();
     const contentDescriptionTask = document.getElementById('input-new-task').value;
-    const contentSetDate = document.getElementById('set-date');
-    const contentPriority = document.getElementById('priority')
+    const contentSetDate = document.getElementById('set-date').value;
+    const contentPriority = document.getElementById('priority').value
+    console.log(contentDescriptionTask, contentPriority, contentSetDate)
 
     checkInputfilled(contentDescriptionTask)
 
-    // Crie uma tarefa associada ao usuário.
     const user = getCurrentUser(); 
 
+    const listTaskCurrentUser = JSON.parse(localStorage.getItem(`taskUser: ${user}`)) || [];
 
-    ///****PAREI AQUI*****
-    const listTaskCurrentUser = JSON.paser(localStorage.getItem(`taskUser: "${user.id}"`) || []);
+    const task = new Task(contentDescriptionTask, contentSetDate, contentPriority);
 
-    const task = new Task(contentDescriptionTask, contentSetDate, priority)
+    listTaskCurrentUser.push(task)
 
-    const taskElement = createBodyTask(task.descriptionTask);
+    const listTaskCurrentUserSringfy = JSON.stringify(listTaskCurrentUser)
 
-    saveTaskLocalStorage(task)
+    const taskElement = createBodyTask(task.descriptionTask, task.dueDate, task.priority);
+
+    saveTaskLocalStorage(listTaskCurrentUserSringfy, user)
 
     CONTAINER_TASK.appendChild(taskElement)
+
+    location.reload();
 }
 
 function createBodyTask(contentDescriptionTask, contentSetDate, contentPriority) { 
@@ -47,8 +51,8 @@ function createBodyTask(contentDescriptionTask, contentSetDate, contentPriority)
     const descriptionTask = document.createElement('p')
     descriptionTask.classList.add('description-task')
     descriptionTask.textContent = contentDescriptionTask;
-
     divInfos.appendChild(descriptionTask);
+
     const divContainerSubInfos = document.createElement('div');
     
     const dueDate = document.createElement('span');
@@ -57,13 +61,12 @@ function createBodyTask(contentDescriptionTask, contentSetDate, contentPriority)
 
     const priority = document.createElement('span');
     priority.classList.add('info-priority');
-    divInfos.appendChild(dueDate);
-    divInfos.appendChild(priority);
     priority.textContent = contentPriority;
 
-    divInfos.appendChild(dueDate);
-    divInfos.appendChild(priority);
-
+    divContainerSubInfos.appendChild(dueDate);
+    divContainerSubInfos.appendChild(priority);
+    divInfos.appendChild(divContainerSubInfos);
+    
     const buttonDeleteTask = document.createElement('button')
     buttonDeleteTask.classList.add('button-delete-task')
     const imgButtonDeleteTask = document.createElement('img')
@@ -81,7 +84,6 @@ function createBodyTask(contentDescriptionTask, contentSetDate, contentPriority)
     divContainerButtons.appendChild(buttonEditTask);
     
     divTask.appendChild(buttonComplete)
-    divTask.appendChild(descriptionTask)
     divTask.appendChild(divInfos)
     divTask.appendChild(divContainerButtons)
 
@@ -103,11 +105,11 @@ function checkInputfilled(contentDescriptionTask) {
     if(contentDescriptionTask === '') {
         const inputTask = document.getElementById('input-new-task')
         inputTask.style.border = '.1rem solid red';
-        const erro = new Error('Campo não pode ser vazio')
-        return alert(erro)
+        const error = new Error('Campo não pode ser vazio')
+        return alert(error)
     }
 }
 
-export { createBodyTask, createNewTask, loadTaskSaved }
+export { createBodyTask, createNewTask, loadTaskSaved, getCurrentUser }
 
 window.addEventListener('load', loadTasksFromLocalStorage);

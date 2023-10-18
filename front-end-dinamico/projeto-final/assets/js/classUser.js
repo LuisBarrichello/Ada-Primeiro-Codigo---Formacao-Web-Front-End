@@ -1,10 +1,15 @@
 class User {
-    static id = 0;
     constructor(userName, email, password) {
-        this.id = User.id++;
+        this.id = User.getNextUserId(); // Obtenha o próximo ID único
         this.userName = userName,
         this.email = email;
         this.password = password;
+    }
+
+    static getNextUserId() {
+        let nextId = +localStorage.getItem('nextUserId') || 1;
+        localStorage.setItem('nextUserId', nextId + 1);
+        return nextId;
     }
 };
 
