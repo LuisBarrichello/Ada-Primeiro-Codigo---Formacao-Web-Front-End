@@ -73,3 +73,9 @@
     border-radius: .4rem;
     background: var(--Gray-400, #333);
 }
+
+@media (max-width: 480px) {
+    .infos div {
+        flex-direction: column;
+    }
+}

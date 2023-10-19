@@ -1,5 +1,4 @@
 import { getCurrentUser } from "./createNewTask.js";
-import { loadTasksFromLocalStorage } from "./localStorage.js";
 
 function deleteTask() {
     const BUTTONS_DELETE_TASK = document.querySelectorAll('.button-delete-task');
@@ -17,7 +16,6 @@ function deleteTask() {
 function removeTaskTheDOM(event) {
     const elementContainerTask = event.target.closest('.container-tasks');
     const taskSelected = event.target.closest('.task')
-    console.log(taskSelected)
     
     elementContainerTask.removeChild(taskSelected);
 }

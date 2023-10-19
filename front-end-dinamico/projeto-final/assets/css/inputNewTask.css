@@ -21,7 +21,7 @@ label {
     display: none;
 }
 
-#input-new-task, #priority, #set-date {
+#input-new-task, #priority, #set-date, #editTaskDueDate, #editTaskDescription, #editTaskPriority {
     padding: 1.6rem;
     color: white;
     border-radius: .8rem;
@@ -43,7 +43,7 @@ label {
     background: var(--Gray-500, #262626);
 }
 
-.button-new-task {
+.button-new-task, #saveTaskChanges{
     cursor: pointer;
     padding: 1.6rem;
     background-color: var(--main-blue);
@@ -60,4 +60,26 @@ label {
 .button-new-task:hover, .button-new-task:focus {
     background-color: #4EA8DE;
     outline: .1px solid white;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+    #form-new-task div {
+        width: 100%;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    #form-new-task div div{
+        width: 100%;
+    }
+    #form-new-task div div input {
+        width: 54%;
+    }
+    #form-new-task div div select {
+        width: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    
 }

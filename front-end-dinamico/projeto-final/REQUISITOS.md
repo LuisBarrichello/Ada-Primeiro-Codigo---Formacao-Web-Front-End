@@ -58,7 +58,7 @@ A aplicação deve ser criada usando HTML, CSS e JavaScript puro, sem o uso de f
   - [x] Implementar a funcionalidade de criação de tarefas, incluindo descrição e prazos.
   - [x] Implementar a funcionalidade de completar tarefa.
   - [x] Implementar a funcionalidade de exclusão de tarefas.
-  - [ ] Implementar a funcionalidade de edição.
+  - [x] Implementar a funcionalidade de edição.
   - [ ] Exibir as tarefas organizadas por prazos e prioridades.
 
 - [ ] **Estilização e Design Responsivo**

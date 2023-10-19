@@ -2,6 +2,7 @@ import { Task } from "./classTask.js";
 import { createBodyTask, getCurrentUser, loadTaskSaved } from "./createNewTask.js";
 import { completeTask } from "./completeTask.js";
 import { deleteTask } from "./deleteTask.js";
+import { editTask } from "./editTask.js";
 
 function saveTaskLocalStorage(listTaskCurrentUser, user) {
     return localStorage.setItem(`taskUser: ${user}`, listTaskCurrentUser);
@@ -22,6 +23,7 @@ function loadTasksFromLocalStorage() {
     }
     completeTask()
     deleteTask()
+    editTask()
 }
 
 export { saveTaskLocalStorage, loadTasksFromLocalStorage }
