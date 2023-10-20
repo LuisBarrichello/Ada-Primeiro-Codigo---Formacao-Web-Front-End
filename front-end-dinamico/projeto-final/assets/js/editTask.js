@@ -1,4 +1,4 @@
-import { getCurrentUser, loadTaskSaved } from "./createNewTask.js";
+import { getCurrentUser } from "./createNewTask.js";
 import { loadTasksFromLocalStorage } from "./localStorage.js";
 
 function editTask() {
@@ -30,31 +30,26 @@ function editTask() {
 }
 
 function saveTaskEdited(modalContainer, event) {
-    const {descriptionEdited, dueDateEdited, priorityEdited} = getInputsEdited(modalContainer)
-            const foundTaskForEdit = getTaskSavedLocalStorage(event);
+    const {descriptionEdited, dueDateEdited, priorityEdited} = getInputsEdited(modalContainer);
+    
+    const foundTaskIdForEdit = getTaskSavedLocalStorage(event);
 
-            const taskList = getTaskListFromLocalStorage();
-            const index = taskList.findIndex((task) => task.descriptionTask === foundTaskForEdit.descriptionTask);
-            // Atualize a tarefa na lista com os novos valores
-            taskList[index].descriptionTask = descriptionEdited;
-            taskList[index].dueDate = dueDateEdited;
-            taskList[index].priority = priorityEdited;
+    const taskList = getTaskListFromLocalStorage();
+    const index = taskList.findIndex((task) => task.id === foundTaskIdForEdit.id);
+    // Atualize a tarefa na lista com os novos valores
+    taskList[index].descriptionTask = descriptionEdited;
+    taskList[index].dueDate = dueDateEdited;
+    taskList[index].priority = priorityEdited;
 
-            saveTaskListToLocalStorage(taskList)
+    saveTaskListToLocalStorage(taskList)
 }
 
 function getTaskSavedLocalStorage(event) {
     const listTaskCurrentUser = getTaskListFromLocalStorage()
-
     const task = event.target.closest('.task')
-
-    const descriptionTaskForEdit = task.querySelector('.description-task').textContent.trim().toLowerCase();
-
-    const foundTaskForEdit = listTaskCurrentUser.find((task) => {
-        return task.descriptionTask === descriptionTaskForEdit
-    })
-
-    return foundTaskForEdit
+    const taskId = Number(task.dataset.id);
+    const foundTaskIdForEdit = listTaskCurrentUser.find(task => Number(task.id) === taskId)
+    return foundTaskIdForEdit
 }
 
 function getTaskListFromLocalStorage() {

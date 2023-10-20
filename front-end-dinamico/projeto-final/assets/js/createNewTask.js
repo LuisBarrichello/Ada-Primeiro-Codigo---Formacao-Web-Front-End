@@ -1,39 +1,44 @@
 import { Task } from "./classTask.js";
+import { completeTask } from "./completeTask.js";
+import { deleteTask } from "./deleteTask.js";
+import { editTask } from "./editTask.js";
 import { saveTaskLocalStorage, loadTasksFromLocalStorage } from "./localStorage.js";
+import { updateStatusTask } from "./updateStatus.js";
 
 const CONTAINER_TASK = document.querySelector('.container-tasks')
 const BUTTON_NEW_TASK = document.querySelector('.button-new-task')
 
-BUTTON_NEW_TASK.addEventListener('click', createNewTask)
+BUTTON_NEW_TASK.addEventListener('click', createNewTask);
 
 function createNewTask(event) {
     event.preventDefault();
     const contentDescriptionTask = document.getElementById('input-new-task').value;
     const contentSetDate = document.getElementById('set-date').value;
-    const contentPriority = document.getElementById('priority').value
+    const contentPriority = document.getElementById('priority').value;
 
-    checkInputfilled(contentDescriptionTask)
+    checkInputfilled(contentDescriptionTask);
 
     const user = getCurrentUser(); 
 
     const listTaskCurrentUser = JSON.parse(localStorage.getItem(`taskUser: ${user}`)) || [];
 
     const task = new Task(contentDescriptionTask, contentSetDate, contentPriority);
+    listTaskCurrentUser.push(task);
 
-    listTaskCurrentUser.push(task)
+    const listTaskCurrentUserSringfy = JSON.stringify(listTaskCurrentUser);
+    const taskElement = createBodyTask(task.descriptionTask, task.dueDate, task.priority, task.id);
 
-    const listTaskCurrentUserSringfy = JSON.stringify(listTaskCurrentUser)
+    saveTaskLocalStorage(listTaskCurrentUserSringfy, user);
 
-    const taskElement = createBodyTask(task.descriptionTask, task.dueDate, task.priority);
+    CONTAINER_TASK.appendChild(taskElement);
 
-    saveTaskLocalStorage(listTaskCurrentUserSringfy, user)
-
-    CONTAINER_TASK.appendChild(taskElement)
-
-/*     location.reload(); */
+    completeTask();
+    deleteTask();
+    editTask();
+    updateStatusTask(listTaskCurrentUser)
 }
 
-function createBodyTask(contentDescriptionTask, contentSetDate, contentPriority) { 
+function createBodyTask(contentDescriptionTask, contentSetDate, contentPriority, id) { 
     const divTask = document.createElement('div')
     divTask.classList.add('task');
     // button completed
@@ -82,6 +87,7 @@ function createBodyTask(contentDescriptionTask, contentSetDate, contentPriority)
     divContainerButtons.appendChild(buttonDeleteTask);
     divContainerButtons.appendChild(buttonEditTask);
     
+    divTask.setAttribute('data-id', id)
     divTask.appendChild(buttonComplete)
     divTask.appendChild(divInfos)
     divTask.appendChild(divContainerButtons)

@@ -61,9 +61,9 @@ A aplicação deve ser criada usando HTML, CSS e JavaScript puro, sem o uso de f
   - [x] Implementar a funcionalidade de edição.
   - [ ] Exibir as tarefas organizadas por prazos e prioridades.
 
-- [ ] **Estilização e Design Responsivo**
+- [x] **Estilização e Design Responsivo**
   - [x] Aprimorar o design da aplicação, tornando-o atraente e amigável.
-  - [ ] Garantir que a aplicação seja responsiva, funcionando bem em dispositivos móveis e desktop.
+  - [x] Garantir que a aplicação seja responsiva, funcionando bem em dispositivos móveis e desktop.
 
 - [ ] **Testes e Depuração**
   - [ ] Testar a aplicação em vários navegadores e dispositivos para garantir a compatibilidade.

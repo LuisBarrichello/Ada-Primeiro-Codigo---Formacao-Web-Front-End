@@ -12,6 +12,11 @@
     transition: left 0.3s;
 }
 
+.user-image {
+    background-color: white;
+    border-radius: 999px;
+}
+
 .button-side-bar {
     display: flex;
     align-items: center;
@@ -46,6 +51,6 @@
 } 
 
 .name-user {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
 }
