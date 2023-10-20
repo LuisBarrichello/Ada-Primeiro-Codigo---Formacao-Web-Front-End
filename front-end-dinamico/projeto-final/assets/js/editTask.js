@@ -16,7 +16,11 @@ function editTask() {
             const buttonSave = modalContainer.querySelector('#saveTaskChanges')
             buttonSave.addEventListener('click', () => {
                 saveTaskEdited(modalContainer, event);
-                loadTasksFromLocalStorage()
+                loadTasksFromLocalStorage().then(() => {
+                    
+                }).catch((error) => {
+                    console.error(error);
+                });
                 modalContainer.style.display = 'none';
             })
 
@@ -67,10 +71,10 @@ function createModal() {
             <input type="text" id="editTaskDescription" placeholder="Descrição da Tarefa" required>
             <input type="date" id="editTaskDueDate" required>
             <select id="editTaskPriority" required>
-                <option value="priority-1">Priority 1</option>
-                <option value="priority-2">Priority 2</option>
-                <option value="priority-3">Priority 3</option>
-                <option value="priority-4">Priority 4</option>
+                <option value="Priority 1">Priority 1</option>
+                <option value="Priority 2">Priority 2</option>
+                <option value="Priority 3">Priority 3</option>
+                <option value="Priority 3">Priority 4</option>
             </select>
             <button id="saveTaskChanges">Salvar</button>
         </div>

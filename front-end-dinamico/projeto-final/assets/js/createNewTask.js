@@ -11,7 +11,6 @@ function createNewTask(event) {
     const contentDescriptionTask = document.getElementById('input-new-task').value;
     const contentSetDate = document.getElementById('set-date').value;
     const contentPriority = document.getElementById('priority').value
-    console.log(contentDescriptionTask, contentPriority, contentSetDate)
 
     checkInputfilled(contentDescriptionTask)
 
@@ -31,7 +30,7 @@ function createNewTask(event) {
 
     CONTAINER_TASK.appendChild(taskElement)
 
-    location.reload();
+/*     location.reload(); */
 }
 
 function createBodyTask(contentDescriptionTask, contentSetDate, contentPriority) { 
@@ -94,7 +93,6 @@ function loadTaskSaved(contentTask) {
     const task = new Task(contentTask);
     const taskElement = createBodyTask(task.descriptionTask);
     CONTAINER_TASK.appendChild(taskElement)
-
 }
 
 function getCurrentUser() {
@@ -112,4 +110,8 @@ function checkInputfilled(contentDescriptionTask) {
 
 export { createBodyTask, createNewTask, loadTaskSaved, getCurrentUser }
 
-window.addEventListener('load', loadTasksFromLocalStorage);
+window.addEventListener('load', loadTasksFromLocalStorage().then(() => {
+    
+}).catch((error) => {
+    console.error(error); 
+}));

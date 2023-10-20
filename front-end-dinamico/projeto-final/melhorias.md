@@ -4,4 +4,5 @@
 - [ ] aplicar css para cada tipo de prioridade
 - [ ] criar data-set para cada tarefa com id deles para excluir tarefas pelo id e nao pele content na descrição
 - [ ] URGENTE! tornar funcoes assincronas para receber dados da api localstorage
+- [ ] responsividade
 - [ ] 

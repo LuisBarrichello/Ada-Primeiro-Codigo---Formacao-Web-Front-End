@@ -8,9 +8,9 @@ function saveTaskLocalStorage(listTaskCurrentUser, user) {
     return localStorage.setItem(`taskUser: ${user}`, listTaskCurrentUser);
 }
 
-function loadTasksFromLocalStorage() {
+async function loadTasksFromLocalStorage() {
     const user = getCurrentUser(); // Obtém o ID do usuário atual
-    const taskList = JSON.parse(localStorage.getItem(`taskUser: ${user}`)) || [];
+    const taskList = await getTaskListFromLocalStorage(user);
 
     const CONTAINER_TASK = document.querySelector('.container-tasks');
 
@@ -24,6 +24,13 @@ function loadTasksFromLocalStorage() {
     completeTask()
     deleteTask()
     editTask()
+}
+
+async function getTaskListFromLocalStorage(user) {
+    return new Promise((resolve, reject) => {
+        const taskList = JSON.parse(localStorage.getItem(`taskUser: ${user}`)) || [];
+        resolve(taskList);
+    });
 }
 
 export { saveTaskLocalStorage, loadTasksFromLocalStorage }

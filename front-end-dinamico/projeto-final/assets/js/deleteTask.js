@@ -33,8 +33,6 @@ function removeTaskTheLocalStorage(event) {
     const listTaskStringify = JSON.stringify(listTaskDeletedTaskSelected)
 
     localStorage.setItem(`taskUser: ${currentUserId}`, `${listTaskStringify}`);
-
-    console.log(listTaskStringify)
 }
 
 export { deleteTask }
