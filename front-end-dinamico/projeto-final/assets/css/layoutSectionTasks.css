@@ -16,7 +16,7 @@
     color: var(--main-blue);
 }
 
-.day-today, .number-today, .current-mounth {
+.day-today, .number-today, .current-month {
     color: var(--main-orange);
 }
 

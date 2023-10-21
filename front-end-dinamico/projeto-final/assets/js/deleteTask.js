@@ -8,17 +8,14 @@ function deleteTask() {
     BUTTONS_DELETE_TASK.forEach((button) => {
         button.addEventListener('click', (event) => {
             removeTaskTheDOM(event);
-            
             removeTaskTheLocalStorage(event)
         })
     })
-
 }
 
 function removeTaskTheDOM(event) {
     const elementContainerTask = event.target.closest('.container-tasks');
     const taskSelected = event.target.closest('.task')
-    console.log(elementContainerTask, taskSelected)
     elementContainerTask.removeChild(taskSelected);
 }
 
@@ -28,9 +25,9 @@ async function removeTaskTheLocalStorage(event) {
     const task = event.target.closest('.task');
     const taskId = Number(task.dataset.id);
     const listWithoutTaskSelected = taskList.filter(task => task.id !== taskId);
-    const listTaskStringify = JSON.stringify(listWithoutTaskSelected)
+    const listTaskStringify = JSON.stringify(listWithoutTaskSelected);
     localStorage.setItem(`taskUser: ${user}`, `${listTaskStringify}`);
-    updateStatusTask(listWithoutTaskSelected)
+    updateStatusTask(listWithoutTaskSelected);
 }
 
 export { deleteTask }

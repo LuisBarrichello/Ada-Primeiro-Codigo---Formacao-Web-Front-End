@@ -47,7 +47,7 @@
     font-size: 1.4rem;
     border-radius: .4rem;
     padding: .5rem;
-    background-color: green;
+    background-color: #2ECC71;
 }
 
 .button-task-checkbox, .button-delete-task, .button-edit-task {

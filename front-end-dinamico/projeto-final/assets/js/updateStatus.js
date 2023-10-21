@@ -2,14 +2,9 @@ import { getCurrentUser } from "./createNewTask.js";
 import { getTaskListFromLocalStorage } from "./localStorage.js";
 
 function updateStatusTask(taskList) {    
-    let accumulator = 0;
-    for (const task of taskList) {
-        if(task.completed === true) {
-            accumulator++
-        }
-    }
+    const completedTasksCount = taskList.filter(task => task.completed === true).length;
 
-    getTaskStatistics(accumulator)
+    getTaskStatistics(completedTasksCount);
 }
 
 async function getTaskStatistics(completedTasksCount) {

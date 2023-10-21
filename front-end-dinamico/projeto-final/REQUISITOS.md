@@ -31,7 +31,7 @@ Você pode adicionar recursos adicionais, como categorização de tarefas, notif
 A aplicação deve ser criada usando HTML, CSS e JavaScript puro, sem o uso de frameworks ou bibliotecas de terceiros. Você deve usar o localStorage ou outro método de armazenamento local para salvar os dados de usuário e tarefas. O design da aplicação deve ser responsivo e apresentar uma interface de usuário atraente e amigável. É importante que você siga as melhores práticas de desenvolvimento web, como separação de HTML, CSS e JavaScript, e código bem estruturado.
 
 
-
+Planejamento de tarefas - Issues
 - [x] **Planejamento do Projeto**
   - [x] Definir os requisitos detalhados com base na descrição do projeto.
   - [x] Esboçar o design da interface do usuário.
@@ -73,7 +73,7 @@ A aplicação deve ser criada usando HTML, CSS e JavaScript puro, sem o uso de f
   - [ ] Se desejar, implementar recursos adicionais, como categorização de tarefas ou notificações em tempo real.
 
 - [ ] **Documentação**
-  - [ ] Criar documentação do projeto, incluindo instruções de uso e descrição das funcionalidades.
+  - [x] Criar documentação do projeto, incluindo instruções de uso e descrição das funcionalidades.
 
 - [ ] **Finalização e Entrega**
   - [ ] Revisar todo o código para garantir que está bem estruturado e segue as melhores práticas.

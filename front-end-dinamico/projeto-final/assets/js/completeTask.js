@@ -15,10 +15,9 @@
             const task = event.target.closest('.task');
             const taskId = Number(task.dataset.id);
             const taskFound = taskList.find(task => Number(task.id) === taskId);
-            console.log(taskFound)
             if(taskFound.completed === true) {
                 taskFound.completed = false;
-                taskElementLineThrough(event)
+                taskElementLineThroughWhitID(taskList);
             } else {
                 taskFound.completed = true;
             }
