@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import InpuGroup from "./inputGroup";
+import InputGroup from "./inputGroup";
 
 class Calculator extends Component {
     render() {
@@ -10,9 +10,9 @@ class Calculator extends Component {
                     Quantas pessoas vão participar?
                 </h3>
                 <div class="row-first">
-                    <InpuGroup label="Homens" id="men" defaultValue={0} />
-                    <InpuGroup label="Mulheres" id="woman" defaultValue={0} />
-                    <InpuGroup label="Crianças" id="kid" defaultValue={0} />
+                    <InputGroup label="Homens" id="men" defaultValue={0} />
+                    <InputGroup label="Mulheres" id="woman" defaultValue={0} />
+                    <InputGroup label="Crianças" id="kid" defaultValue={0} />
                 </div>
             </div>
         )
