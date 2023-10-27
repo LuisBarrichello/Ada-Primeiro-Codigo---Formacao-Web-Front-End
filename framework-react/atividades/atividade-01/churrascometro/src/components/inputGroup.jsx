@@ -6,7 +6,7 @@ function InpuGroup({id, label, defaultValue}) {
         <div className="input-group">
             <label htmlFor={id}>{label}</label>
             <input type="number" id={id} value={defaultValue} className="input-valid"/>
-            <ButtonGroup/>
+            <ButtonGroup />
         </div>
     )
 }

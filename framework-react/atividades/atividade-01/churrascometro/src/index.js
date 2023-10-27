@@ -1,7 +1,9 @@
 import React from "react";
 import ThemeSwitch from "./components/themeSwitch";
 import Calculator from "./components/calculator";
-import {createRoot} from "react-dom/client"
+import { createRoot } from 'react-dom/client';
+import "./styles.css"; 
+
 
 function App() {
     return (
@@ -14,5 +16,5 @@ function App() {
 }
 export default App;
 
-const root = createRoot(document.getElementById('app'))
-root.render(App)
+const root = createRoot(document.getElementById('root'))
+root.render(<App />)
