@@ -1,5 +1,5 @@
-import InputGroup from "./inputGroup";
 import { Component } from "react";
+import InputGroup from "./inputGroup";
 
 class Calculator extends Component {
     constructor(props) {
@@ -19,12 +19,17 @@ class Calculator extends Component {
     }
 
     handleCalculation = () => {
-        /* this.setState((prevState) => ({
-            meat: prevState.meat += (this.state.men * 0.4) + (this.state.woman * 0.32) + (this.state.kids * 0.2)
-        })) */
-        const meatValue = this.state.meat + (this.state.men * 0.4) + (this.state.woman * 0.32) + (this.state.kid * 0.2);
-        console.log('Valor da carne:', meatValue);
-        this.setState({meat: meatValue})
+        console.log(this.state.men)
+        this.setState((prevState) => ({
+            meat: prevState.meat += (this.state.men * 0.4) + (this.state.woman * 0.32) + (this.state.kid * 0.2),
+            garlicBread: prevState.garlicBread += (this.state.men * 2) + (this.state.woman * 2) + (this.state.kid * 1),
+            coal: prevState.coal += (this.state.men * 1) + (this.state.woman * 1) + (this.state.kid * 1),
+            salt: prevState.salt += (this.state.men * 0.04) + (this.state.woman * 0.04) + (this.state.kid * 0.04),
+            ice: prevState.ice += (this.state.men * 0.5) + (this.state.woman * 0.5) + (this.state.kid * 0.5),
+            soda: prevState.soda += (this.state.men * 0.4) + (this.state.woman * 0.4) + (this.state.kid * 0.4),
+            water: prevState.water += (this.state.men * 0.2) + (this.state.woman * 0.2) + (this.state.kid * 0.2),
+        }))
+        console.log('meat:' + this.state.meat, 'men: ' + this.state.men) // retorna sempre zero
     }
 
     handleInputChange = (inputName, value) => {
@@ -40,15 +45,30 @@ class Calculator extends Component {
                     Quantas pessoas vão participar?
                 </h3>
                 <div className="row-first">
-                    <InputGroup label="Homens" id="men" defaultValue={0} onChange={(value) => this.handleInputChange("men", value)} />
-                    <InputGroup label="Mulheres" id="woman" defaultValue={0} />
-                    <InputGroup label="Crianças" id="kid" defaultValue={0} />
+                    <InputGroup 
+                        label="Homens" 
+                        id="men" 
+                        defaultValue={0} 
+                        onChange={(value) => this.handleInputChange("men", value)} 
+                    />
+                    <InputGroup 
+                        label="Mulheres" 
+                        id="woman" 
+                        defaultValue={0} 
+                        onChange={this.handleInputChange} 
+                    />
+                    <InputGroup 
+                        label="Crianças" 
+                        id="kid" 
+                        defaultValue={0} 
+                        onChange={this.handleInputChange} 
+                    />
                 </div>
                 <div className="row">
                     <div>
                         <p id="invalid-input" style={{ visibility: "hidden" }}>Por favor, insira somente números!</p>
                         <p id="no-input" style={{ visibility: "hidden" }}>Por favor, selecione a quantidade de pessoas!</p>
-                        <button onClick={this.handleCalculation} className="default-button">Calcular</button>
+                        <a onClick={this.handleCalculation} className="default-button">Calcular</a>
                     </div>
                 </div>
             </div>
