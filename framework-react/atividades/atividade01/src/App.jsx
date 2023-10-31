@@ -1,5 +1,6 @@
+
 import ThemeSwitch from "./components/ThemeSwitch";
-import Calculator from "./components/Calculator";
+import Calculator from "./components/calculator";
 import "./styles.css"; 
 
 

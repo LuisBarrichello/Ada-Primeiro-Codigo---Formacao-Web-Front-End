@@ -16,10 +16,11 @@ class Calculator extends Component {
             soda: 0,
             water: 0,
         }
+
+        /* this.handleInputChange = this.handleInputChange.bind(this) */
     }
 
     handleCalculation = () => {
-        console.log(this.state.men)
         this.setState((prevState) => ({
             meat: prevState.meat += (this.state.men * 0.4) + (this.state.woman * 0.32) + (this.state.kid * 0.2),
             garlicBread: prevState.garlicBread += (this.state.men * 2) + (this.state.woman * 2) + (this.state.kid * 1),
@@ -32,9 +33,9 @@ class Calculator extends Component {
         console.log('meat:' + this.state.meat, 'men: ' + this.state.men) // retorna sempre zero
     }
 
-    handleInputChange = (inputName, value) => {
-        console.log(inputName, value)
-        this.setState({ [inputName]: value });
+    handleInputChange = (id, value) => {
+        console.log(id, value)
+        this.setState({ [id]: value });
     }
 
     render() {
@@ -49,7 +50,7 @@ class Calculator extends Component {
                         label="Homens" 
                         id="men" 
                         defaultValue={0} 
-                        onChange={(value) => this.handleInputChange("men", value)} 
+                        onChange={this.handleInputChange} 
                     />
                     <InputGroup 
                         label="Mulheres" 
