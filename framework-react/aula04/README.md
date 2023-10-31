@@ -1,6 +1,11 @@
 # React Router
 
-#### Introdução: Roteamento de á inas tradicional
+#### O que é roteamento no contexto de páginas web?
+
+- O roteamento é um mecanismo que permite aos usuários navegar entre diferentes páginas ou partes de uma aplicação;
+- No contexto da web, o roteamento é responsável por gerenciar as URLs que são exibidas no navegador.
+
+#### Introdução: Roteamento de páginas tradicional
 
 ![Alt text](image.png)
 
@@ -14,8 +19,7 @@
 
 ### O que são as Rotas?
 
-- As rotas são a URL que representam os diferentes caminho para chegar
-nas páginas da aplicação;
+- As rotas são a **URLs** que representam os diferentes **caminhos** para chegar nas páginas da aplicação;
 
 ### O que é o React Router?
 
@@ -28,7 +32,7 @@ nas páginas da aplicação;
 - Instale o React Router no projeto (**npm install react-router-dom**);
 - Importe os componentes **BrowserRouter, Route, Routes** o arquivo App.js;
 - Crie componentes para cada rota;
-- Use o componente Routes para renderizar as rotas.
+- Use o componente **Routes** para renderizar as rotas.
 
 Ex:
 
@@ -37,9 +41,8 @@ Ex:
 
 ### Como criar links de navegação?
 
-- React Router fornece o componente Link para criar links de navegação;
-- VER SLIDES
-
+- React Router fornece o **componente Link** para criar links de navegação;
+- O componente Link renderiza um elemento HTML com um atributo **href** que corresponde ao caminho da rota.
 
 Ex:
 

@@ -1,5 +1,5 @@
 import { Component } from "react";
-import InputGroup from "./inputGroup";
+import InputGroup from "../components/inputGroup";
 
 class Calculator extends Component {
     constructor(props) {
