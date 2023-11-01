@@ -1,28 +1,29 @@
 import { useState, useContext} from 'react'
 import ButtonGroup from './button'
 import PropTypes from 'prop-types'
-import { useOutletContext } from 'react-router-dom';
-
+import InputContext from '../context/Context';
 
 function InputGroup({ id, label, defaultValue }) {
-
-    const [data] = useOutletContext();
-
     const [inputValue, setInputValue] = useState(defaultValue);
+    const context = useContext(InputContext);
 
     const handleInputChange = (event) => {
         const newValue = Number(event.target.value);
         setInputValue(newValue);
-        console.log(data.men)
+        context.setInputValue(id, newValue); 
     };
 
     const handleIncrement = () => {
-        setInputValue(inputValue + 1)
+        const newValue = inputValue + 1;
+        setInputValue(newValue);
+        context.setInputValue(id, newValue);
     }
     
     const handleDecrement = () => {
         if(inputValue > 0) {
-            setInputValue(inputValue - 1)
+            const newValue = inputValue - 1;
+            setInputValue(newValue);
+            context.setInputValue(id, newValue);
         }
     }
 
@@ -44,7 +45,7 @@ InputGroup.propTypes = {
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     defaultValue: PropTypes.number.isRequired,
-    onChange: PropTypes.func.isRequired,
+    /* onChange: PropTypes.func.isRequired, */
 }
 
 export default InputGroup

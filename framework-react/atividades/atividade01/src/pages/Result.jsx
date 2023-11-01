@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom"
+import InputContext from "../context/Context"
+import { useContext } from "react";
 
 function Result() {
+    const inputValues = useContext(InputContext);
     return (
         <div>
             <div className="result-total-guest">
                 <p>Confira a lista para o seu churrasco!</p>
-                <p id="total-guest">{0} convidado</p>
-                <span className="guest-list">{0} homem</span>
+                <p id="total-guest">{inputValues.men + inputValues.woman + inputValues.kid} convidado</p>
+                <span className="guest-list">{inputValues.men} homem</span>
                 <span className="guest-list">{0} mulheres</span>
                 <span className="guest-list">{0} crianças</span>
             </div>
@@ -28,7 +31,7 @@ function Result() {
             <div className="row">
                 <div>
                     <Link to="/">
-                        <a href="index.html" className="default-button">Novo cálculo</a>
+                        <button href="index.html" className="default-button">Novo cálculo</button>
                     </Link>
                 </div>
             </div>
