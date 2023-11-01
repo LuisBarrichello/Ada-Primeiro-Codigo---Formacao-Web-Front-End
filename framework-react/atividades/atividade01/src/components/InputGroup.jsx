@@ -1,15 +1,19 @@
-import { useState } from 'react'
+import { useState, useContext} from 'react'
 import ButtonGroup from './button'
 import PropTypes from 'prop-types'
+import { useOutletContext } from 'react-router-dom';
 
 
 function InputGroup({ id, label, defaultValue }) {
+
+    const [data] = useOutletContext();
 
     const [inputValue, setInputValue] = useState(defaultValue);
 
     const handleInputChange = (event) => {
         const newValue = Number(event.target.value);
         setInputValue(newValue);
+        console.log(data.men)
     };
 
     const handleIncrement = () => {
