@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import InputGroup from "../components/inputGroup";
 import { Link } from "react-router-dom";
+import InputContext from "../context/Context";
 
 function Calculator() {
+    const context = useContext(InputContext);
+    const inputValues = context.inputValues;
+
     const [state, setState] = useState({
         men: 0,
         woman: 0,
@@ -15,8 +19,8 @@ function Calculator() {
         soda: 0,
         water: 0,
     });
-    
 
+    
     const handleCalculation = () => {
         setState(prevState => ({
             ...prevState,
@@ -28,12 +32,9 @@ function Calculator() {
             soda: prevState.soda + (prevState.men * 0.4) + (prevState.woman * 0.4) + (prevState.kid * 0.4),
             water: prevState.water + (prevState.men * 0.2) + (prevState.woman * 0.2) + (prevState.kid * 0.2),
         }));
-    }
 
-    /* handleInputChange = (id, value) => {
-        console.log(id, value)
-        setState({ [id]: value });
-    } */
+        console.log(inputValues)
+    }
 
     return (
             <div className="calculator">

@@ -5,6 +5,7 @@ import InputContext from '../context/Context';
 
 function InputGroup({ id, label, defaultValue }) {
     const [inputValue, setInputValue] = useState(defaultValue);
+    
     const context = useContext(InputContext);
 
     const handleInputChange = (event) => {
@@ -16,15 +17,19 @@ function InputGroup({ id, label, defaultValue }) {
     const handleIncrement = () => {
         const newValue = inputValue + 1;
         setInputValue(newValue);
-        context.setInputValue(id, newValue);
+        console.log(context)
     }
     
     const handleDecrement = () => {
         if(inputValue > 0) {
             const newValue = inputValue - 1;
             setInputValue(newValue);
-            context.setInputValue(id, newValue);
         }
+    }
+
+    const updateContextValue = (newValue) => {
+        context.setInputValue(id, newValue);
+        console.log(inputValue)
     }
 
     return (
@@ -36,7 +41,7 @@ function InputGroup({ id, label, defaultValue }) {
                 onChange={handleInputChange} 
                 value={inputValue} 
                 className="input-valid"/>
-                <ButtonGroup inputValue={inputValue} onDecrement={handleDecrement} onIncrement={handleIncrement} />
+                <ButtonGroup inputValue={inputValue} onDecrement={handleDecrement} onIncrement={handleIncrement} onButtonClick={updateContextValue} />
         </div>
     )
 }
@@ -45,7 +50,6 @@ InputGroup.propTypes = {
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     defaultValue: PropTypes.number.isRequired,
-    /* onChange: PropTypes.func.isRequired, */
 }
 
 export default InputGroup

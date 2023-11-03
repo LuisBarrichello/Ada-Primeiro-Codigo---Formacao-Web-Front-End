@@ -3,15 +3,17 @@ import InputContext from "../context/Context"
 import { useContext } from "react";
 
 function Result() {
-    const inputValues = useContext(InputContext);
+    const context = useContext(InputContext);
+    const inputValues = context.inputValues
+
     return (
         <div>
             <div className="result-total-guest">
                 <p>Confira a lista para o seu churrasco!</p>
                 <p id="total-guest">{inputValues.men + inputValues.woman + inputValues.kid} convidado</p>
                 <span className="guest-list">{inputValues.men} homem</span>
-                <span className="guest-list">{0} mulheres</span>
-                <span className="guest-list">{0} crianças</span>
+                <span className="guest-list">{inputValues.woman} mulheres</span>
+                <span className="guest-list">{inputValues.kid} crianças</span>
             </div>
             <div className="input-group-result">
                 <div id="header-result">
