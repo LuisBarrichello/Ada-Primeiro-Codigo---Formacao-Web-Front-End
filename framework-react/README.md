@@ -28,7 +28,3 @@
 - Entender o conceito de componentes e a razão para componentizar uma aplicação.
 - Identificar oportunidades para usar o React na resolução de problemas do mundo real.
 - Aprender a criar um novo projeto usando o React.
-
-### Aulas:
-* [Aula 01](./aula01/)
-* [Aula 02](./aula02/)
